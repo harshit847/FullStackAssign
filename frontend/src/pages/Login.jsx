@@ -13,16 +13,18 @@ export default function Login() {
     if (!password) return alert("Password required");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/login`,
+        {
+          email,
+          password,
+        },
+      );
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       navigate("/dashboard");
-
     } catch {
       alert("Login failed");
     }
@@ -36,14 +38,14 @@ export default function Login() {
         <input
           className="login-field"
           placeholder="Email"
-          onChange={(e)=>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
           className="login-field"
           type="password"
           placeholder="Password"
-          onChange={(e)=>setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
 
         <button className="auth-button" onClick={handleLogin}>

@@ -23,7 +23,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/dashboard", {
+      .get(`${import.meta.env.VITE_API_URL}/api/dashboard`, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -37,13 +37,13 @@ export default function Dashboard() {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/add-${type}`,
+        `${import.meta.env.VITE_API_URL}/api/add-${type}`,
         { value },
         {
           headers: {
             Authorization: localStorage.getItem("token"),
           },
-        }
+        },
       );
 
       setData({ ...data, [type + "s"]: res.data });
@@ -72,7 +72,6 @@ export default function Dashboard() {
       </div>
 
       <div className="dashboard-container">
-
         <div className="add-section">
           <input
             className="auth-input"
@@ -80,7 +79,10 @@ export default function Dashboard() {
             value={newLead}
             onChange={(e) => setNewLead(e.target.value)}
           />
-          <button className="add-btn" onClick={() => addItem("lead", newLead, setNewLead)}>
+          <button
+            className="add-btn"
+            onClick={() => addItem("lead", newLead, setNewLead)}
+          >
             Add Lead
           </button>
         </div>
@@ -92,7 +94,10 @@ export default function Dashboard() {
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
           />
-          <button className="add-btn" onClick={() => addItem("task", newTask, setNewTask)}>
+          <button
+            className="add-btn"
+            onClick={() => addItem("task", newTask, setNewTask)}
+          >
             Add Task
           </button>
         </div>
@@ -104,7 +109,10 @@ export default function Dashboard() {
             value={newUser}
             onChange={(e) => setNewUser(e.target.value)}
           />
-          <button className="add-btn" onClick={() => addItem("user", newUser, setNewUser)}>
+          <button
+            className="add-btn"
+            onClick={() => addItem("user", newUser, setNewUser)}
+          >
             Add User
           </button>
         </div>
@@ -113,7 +121,9 @@ export default function Dashboard() {
         <table className="data-table">
           <tbody>
             {data.leads?.map((item, i) => (
-              <tr key={i}><td>{item}</td></tr>
+              <tr key={i}>
+                <td>{item}</td>
+              </tr>
             ))}
           </tbody>
         </table>
@@ -122,7 +132,9 @@ export default function Dashboard() {
         <table className="data-table">
           <tbody>
             {data.tasks?.map((item, i) => (
-              <tr key={i}><td>{item}</td></tr>
+              <tr key={i}>
+                <td>{item}</td>
+              </tr>
             ))}
           </tbody>
         </table>
@@ -131,11 +143,12 @@ export default function Dashboard() {
         <table className="data-table">
           <tbody>
             {data.users?.map((item, i) => (
-              <tr key={i}><td>{item}</td></tr>
+              <tr key={i}>
+                <td>{item}</td>
+              </tr>
             ))}
           </tbody>
         </table>
-
       </div>
     </div>
   );
