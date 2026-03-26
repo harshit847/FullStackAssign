@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f6fa;
+}
+
+.auth-box {
+  background: white;
+  padding: 30px;
+  width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.auth-box h2 {
+  margin-bottom: 20px;
+}
+
+
+.auth-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4a69bd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.auth-button:hover {
+  background-color: #3b55a0;
+}
+
+.auth-link {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.navbar {
+  background-color: #4a69bd;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background: white;
+  color: #4a69bd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-name {
+  margin-right: 10px;
+}
+
+.dashboard-container {
+  padding: 20px;
+}
+
+.add-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  background-color: #f1f2f6;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.data-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.add-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-section .auth-input {
+  flex: 1;             
+  width: auto;          
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid grey;
+}
+
+.add-btn {
+  padding: 10px 16px;
+  background-color: #4a69bd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.login-field{
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+
+}
+
+.reg-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
